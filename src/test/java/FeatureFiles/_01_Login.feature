@@ -6,9 +6,8 @@
   #- Sonra Yukarıdaki Senaryoyu Gherkin dilinde yazdık.
 
   Feature: Login Functionality
-
     Scenario: Login with valid username and password
 
       Given Navigate to Campus
       When Enter username and password after click Login button
-      Then User should login successfuly
+      Then User should login successfully
