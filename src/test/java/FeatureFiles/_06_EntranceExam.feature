@@ -19,7 +19,7 @@
         | addButton |
 
         And User sending the keys in Dialog content
-          | nameInput | emin123 |
+          | nameInput | emin1234 |
 
 
         And Click on the element in the Form Content
@@ -38,7 +38,7 @@
           | entranceExamsTwo |
 
         And User delete item from Dialog
-          | emin123 |
+          | emin1234 |
         Then Success message should be displayed
 
 
