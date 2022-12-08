@@ -13,7 +13,7 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class Parent {
-    WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+    WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(5));
     public void sendKeysFunction(WebElement element, String value)
     {
         waitUntilVisible(element); // gözükene kadar bekle

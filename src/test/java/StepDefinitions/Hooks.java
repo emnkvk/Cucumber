@@ -36,20 +36,25 @@ public class Hooks {
        //         scenario, GWD.threadBrowserName.get(), date.format(formatter));
 
         if (scenario.isFailed()){
+
+
             // klasöre
-            TakesScreenshot screenshot = (TakesScreenshot) GWD.getDriver();
-            File ekranDosyasi = screenshot.getScreenshotAs(OutputType.FILE);
+            //TakesScreenshot screenshot = (TakesScreenshot) GWD.getDriver();
+            byte [] bytehali =((TakesScreenshot) GWD.getDriver()).getScreenshotAs(OutputType.BYTES);//Byte hali ss
+            scenario.attach(bytehali, "image/png", "screenshot name");
+          //  File ekranDosyasi =((TakesScreenshot) GWD.getDriver()).getScreenshotAs(OutputType.FILE);//File hali ss
+
 
             //Extend Reporta ekleniyor  EXTEND report olmadığında burası kaldırılmalı !!! yoksa browserlar KAPANMAZ
             //ExtentTestManager.getTest().addScreenCaptureFromBase64String(getBase64Screenshot());
 
-            try {
-                FileUtils.copyFile(ekranDosyasi,
-                        new File("target/FailedScreenShots/"+ scenario.getId()+date.format(formatter)+".png"));
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                FileUtils.copyFile(ekranDosyasi,
+//                        new File("target/FailedScreenShots/"+ scenario.getId()+date.format(formatter)+".png"));
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         }
 
         // ekran görüntüsü al senaryo hatalı ise
