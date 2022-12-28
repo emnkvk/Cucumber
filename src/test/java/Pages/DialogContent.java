@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class DialogContent extends Parent{
 
 
@@ -36,6 +38,9 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//ms-save-button//button")
     private WebElement saveButton;
 
+    @FindBy(xpath = "//ms-save-button")
+    private WebElement editSaveButton;
+
     //dynamic-view[@class='ng-star-inserted']
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     private WebElement successMessage;
@@ -55,6 +60,9 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//ms-search-button//button")
     private WebElement searchButton;
 
+    @FindBy(xpath = "(//ms-edit-button/button)[1]")
+    private WebElement editButton;
+
     @FindBy(xpath = "(//ms-delete-button//button)[1]")
     private WebElement deleteButton;
 
@@ -72,6 +80,10 @@ public class DialogContent extends Parent{
 
     @FindBy(xpath = "//mat-slide-toggle[@formcontrolname='active']")
     private WebElement toogleBar;
+
+    @FindBy(xpath = "//tbody[@role='rowgroup']/tr/td[2]")
+    public List<WebElement> statesList;
+    //tbody[@role='rowgroup']/tr/td[2]
 
 
 
@@ -121,11 +133,17 @@ public class DialogContent extends Parent{
             case "saveButton":
                 myElement = saveButton;
                 break;
+                case "editSaveButton":
+                myElement = editSaveButton;
+                break;
             case "acceptCookies":
                 myElement = acceptCookies;
                 break;
             case "searchButton":
                 myElement = searchButton;
+                break;
+                case "editButton":
+                myElement = editButton;
                 break;
             case "deleteButton":
                 myElement = deleteButton;

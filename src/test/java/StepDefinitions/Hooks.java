@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Utilities.ExcelUtility;
 import Utilities.GWD;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -31,9 +32,9 @@ public class Hooks {
 
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy");
-
-      //  ExcelUtility.writeExcel("src/test/java/ApachePOI/resource/ScenarioStatus.xlsx",
-       //         scenario, GWD.threadBrowserName.get(), date.format(formatter));
+        //Senaryoların sonuçlarını bir excell formatinda yazdirmak
+        ExcelUtility.writeToExcel("src/test/java/ApachePOI/resources/ScenarioStatus.xlsx",
+                scenario, GWD.threadBrowserName.get(), date.format(formatter));
 
         if (scenario.isFailed()){
 

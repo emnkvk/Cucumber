@@ -23,6 +23,8 @@ public class LeftNav extends Parent{
 
     @FindBy(xpath = "//span[text()='Nationalities']")
     private WebElement nationalities;
+    @FindBy(xpath = "//span[contains(text(),'States')]")
+    private WebElement states;
 
     @FindBy(xpath = "(//span[text()='Fees'])[1]")
     private WebElement feeSetup;
@@ -35,6 +37,18 @@ public class LeftNav extends Parent{
 
     @FindBy(xpath = "(//span[text()='Entrance Exams'])[2]")
     private WebElement entranceExamsTwo;
+
+     @FindBy(xpath = "(//span[text()='Education'])[1]")
+    private WebElement educationSetup;
+
+     @FindBy(xpath = "(//span[text()='Setup'])[5]")
+    private WebElement setupThree;
+
+    @FindBy(xpath = "(//span[text()='Subject Categories'])[1]")
+    private WebElement subjectCategories;
+
+
+
 
 
 
@@ -49,10 +63,15 @@ public class LeftNav extends Parent{
             case "countries" : myElement=countries;break;
             case "citizenShip" : myElement=citizenShip;break;
             case "nationalities" : myElement=nationalities;break;
+            case "states" : myElement=states;break;
             case "feeSetup" : myElement=feeSetup;break;
             case "entranceExamsOne" : myElement=entranceExamsOne;break;
             case "setup" : myElement=setup;break;
             case "entranceExamsTwo" : myElement=entranceExamsTwo;break;
+            case "educationSetup" : myElement=educationSetup;break;
+            case "subjectCategories" : myElement=subjectCategories;break;
+            case "setupThree" : myElement=setupThree;break;
+
         }
 
         clickFunction(myElement);

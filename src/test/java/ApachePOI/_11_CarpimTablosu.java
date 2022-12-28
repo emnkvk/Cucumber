@@ -1,15 +1,16 @@
 package ApachePOI;
 
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.*;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class _07_WriteInTheExcel {
+public class _11_CarpimTablosu {
     public static void main(String[] args) throws IOException {
-        // var olan excell e yazma
-        String path="src/test/java/ApachePOI/resources/WriteInTheExcelFile.xlsx";
+        String path="src/test/java/ApachePOI/resources/carpimTablosuExcell5.xlsx";
         FileInputStream inputStream = new FileInputStream(path); // Okuma modu açıldı
         Workbook workbook = WorkbookFactory.create(inputStream);
         Sheet sheet = workbook.getSheetAt(0);
@@ -17,11 +18,20 @@ public class _07_WriteInTheExcel {
         //Hafızada İşlemlere devam ediyor
         Row yenisatir = sheet.createRow(0); // Satır oluşturuldu 0 ıncı yerde
         Cell yenihucre = yenisatir.createCell(0);
-        yenihucre.setCellValue("Emin");
+        //yenihucre.setCellValue("Emin");
 
 
-        for (int i = 1; i < 10 ; i++) {
-            yenisatir.createCell(i).setCellValue(i);
+        for (int i = 1; i <= 10 ; i++) {
+            yenihucre.setCellValue(i);
+            yenihucre.setCellValue(i);
+            yenihucre.setCellValue(i);
+            yenihucre.setCellValue(i);
+            yenihucre.setCellValue(i);
+            yenihucre.setCellValue(i);
+            yenihucre.setCellValue(i);
+            yenihucre.setCellValue(i);
+            yenihucre.setCellValue(i);
+            yenihucre.setCellValue(i);
 
         }
         // sıra kaydetmeye geldi, bütün bilgiler hafızada buraya kadar, her şey WORKBOOK da
@@ -38,6 +48,4 @@ public class _07_WriteInTheExcel {
 
     }
 
-    public static class _09_Soru {
-    }
 }
