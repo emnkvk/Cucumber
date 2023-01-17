@@ -52,15 +52,15 @@ public class GWD {
 
             String browserName = threadBrowserName.get(); // bu threaddeki browsername i verdi.
             switch (browserName) {
-                case "chrome":
-                    WebDriverManager.chromedriver().setup();
-
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-                    threadDriver.set(new ChromeDriver()); // bu thread e chrome istenmişse ve yoksa bir tane ekleniyor
-                                                //options
-
-                    break;
+//                case "chrome":
+//                    WebDriverManager.chromedriver().setup();
+//
+//                    ChromeOptions options = new ChromeOptions();
+//                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+//                    threadDriver.set(new ChromeDriver()); // bu thread e chrome istenmişse ve yoksa bir tane ekleniyor
+//                                                //options
+//
+//                    break;
 
                 case "firefox":
                     //System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
@@ -78,12 +78,12 @@ public class GWD {
                     WebDriverManager.edgedriver().setup();
                     threadDriver.set(new EdgeDriver());
                     break;
-//                default:
-//                    WebDriverManager.chromedriver().setup();
+                default:
+                    WebDriverManager.chromedriver().setup();
 //
-//                    ChromeOptions options = new ChromeOptions();
-//                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-//                    threadDriver.set(new ChromeDriver(options)); // bu thread e chrome istenmişse ve yoksa bir tane ekleniyor
+                    ChromeOptions options2 = new ChromeOptions();
+                    options2.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                    threadDriver.set(new ChromeDriver(options2)); // bu thread e chrome istenmişse ve yoksa bir tane ekleniyor
 //                                                 //options
             }
         }
