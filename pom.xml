@@ -113,28 +113,28 @@
     <build>
         <plugins>
 
-            <plugin>
-                <groupId>net.masterthought</groupId>
-                <artifactId>maven-cucumber-reporting</artifactId>
-                <version>5.0.0</version>
-                <executions>
-                    <execution>
-                        <id>execution</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <projectName>Cucumber HTML Reports</projectName>
-                            <outputDirectory>${project.build.directory}/Report/cucumber-reports</outputDirectory>
-                            <inputDirectory>${project.build.directory}</inputDirectory>
-                            <jsonFiles>
-                                <param>**/cucumber*.json</param>
-                            </jsonFiles>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>net.masterthought</groupId>-->
+<!--                <artifactId>maven-cucumber-reporting</artifactId>-->
+<!--                <version>5.0.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>execution</id>-->
+<!--                        <phase>test</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>generate</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <projectName>Cucumber HTML Reports</projectName>-->
+<!--                            <outputDirectory>${project.build.directory}/Report/cucumber-reports</outputDirectory>-->
+<!--                            <inputDirectory>${project.build.directory}</inputDirectory>-->
+<!--                            <jsonFiles>-->
+<!--                                <param>**/cucumber*.json</param>-->
+<!--                            </jsonFiles>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
 
             <plugin><!--derlemek için-->
                 <groupId>org.apache.maven.plugins</groupId>
@@ -157,6 +157,8 @@
         </plugins>
 
     </build>
+
+
 
 
 </project>
