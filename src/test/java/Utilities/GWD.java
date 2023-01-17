@@ -55,8 +55,8 @@ public class GWD {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
 
-                   // ChromeOptions options = new ChromeOptions();
-                   // options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
                     threadDriver.set(new ChromeDriver()); // bu thread e chrome istenmişse ve yoksa bir tane ekleniyor
                                                 //options
 
