@@ -149,7 +149,6 @@
                                         <includes>
                                             <include>**/_04_TestRunnerSmoke.java</include>
                                         </includes>
-                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
 
