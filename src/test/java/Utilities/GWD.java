@@ -52,15 +52,18 @@ public class GWD {
 
             String browserName = threadBrowserName.get(); // bu threaddeki browsername i verdi.
             switch (browserName) {
-//                case "chrome":
-//                    WebDriverManager.chromedriver().setup();
-//
-//                    ChromeOptions options = new ChromeOptions();
-//                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-//                    threadDriver.set(new ChromeDriver()); // bu thread e chrome istenmişse ve yoksa bir tane ekleniyor
-//                                                //options
-//
-//                    break;
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    if (!runningFromIntelliJ()) {
+                        ChromeOptions options = new ChromeOptions();
+                        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                        threadDriver.set(new ChromeDriver()); // bu thread e chrome istenmişse ve yoksa bir tane ekleniyor
+                        //options
+                    }
+                    else {
+                        threadDriver.set(new ChromeDriver());
+                    }
+                    break;
 
                 case "firefox":
                     //System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
@@ -78,13 +81,7 @@ public class GWD {
                     WebDriverManager.edgedriver().setup();
                     threadDriver.set(new EdgeDriver());
                     break;
-                default:
-                    WebDriverManager.chromedriver().setup();
-//
-                    ChromeOptions options2 = new ChromeOptions();
-                    options2.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-                    threadDriver.set(new ChromeDriver(options2)); // bu thread e chrome istenmişse ve yoksa bir tane ekleniyor
-//                                                 //options
+
             }
         }
 
@@ -102,6 +99,12 @@ public class GWD {
     threadDriver.set(driver); // tekrar gelirse için boş olmuş olsun
         }
 
+    }
+
+    public static boolean runningFromIntelliJ()
+    {
+        String classPath = System.getProperty("java.class.path");
+        return classPath.contains("idea_rt.jar");
     }
     public static void Bekle(int saniye) {
         try {
